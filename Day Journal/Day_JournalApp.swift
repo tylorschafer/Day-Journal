@@ -11,7 +11,7 @@ import SwiftUI
 struct Day_JournalApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            JournalEntriesListView()
         }
     }
 }
