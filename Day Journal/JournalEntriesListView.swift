@@ -6,17 +6,28 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct JournalEntriesListView: View {
-    let journalEntries: [JournalEntry] = []
-    
+    @Query private var journalEntries: [JournalEntry]
+
     var body: some View {
-        List(journalEntries) { entry in
-            Text(entry.title)
+        NavigationStack {
+            List(journalEntries) { entry in
+                NavigationLink(destination: JournalEntryDetailView(entry: entry)) {
+                    JournalEntryRowView(entry: entry)
+                }
+            }
+            .navigationTitle("\(journalEntryCount) Journal Entries")
         }
+    }
+    
+    var journalEntryCount: Int {
+        journalEntries.count
     }
 }
 
 #Preview {
     JournalEntriesListView()
+        .modelContainer(for: JournalEntry.self, inMemory: true)
 }

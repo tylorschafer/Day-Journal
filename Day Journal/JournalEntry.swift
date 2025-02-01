@@ -6,10 +6,19 @@
 //
 
 import Foundation
+import SwiftData
 
-class JournalEntry: Identifiable {
-    let id: UUID = UUID()
+@Model
+final class JournalEntry {
     var title: String = ""
+    var text: String = ""
+    var rating: Int = 1
+    var date: Date = Date()
+    
+    init(title: String, text: String, rating: Int, date: Date) {
+        self.title = title
+        self.text = text
+        self.rating = rating
+        self.date = date
+    }
 }
-
-
