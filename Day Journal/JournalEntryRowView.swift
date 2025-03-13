@@ -15,7 +15,7 @@ struct JournalEntryRowView: View {
             Text(entry.title)
                 .font(.title3)
             HStack {
-                Text(String(repeating: "⭐️", count: entry.rating))
+                RatingView(rating: entry.rating)
                     .padding(.bottom, 8)
                 Text(entry.date, style: .date)
                     .font(.subheadline)

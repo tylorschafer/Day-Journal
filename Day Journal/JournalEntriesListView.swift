@@ -10,6 +10,8 @@ import SwiftData
 
 struct JournalEntriesListView: View {
     @Query private var journalEntries: [JournalEntry]
+    @Environment(\.modelContext) private var modelContext
+    @State private var showCreateView: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -19,6 +21,17 @@ struct JournalEntriesListView: View {
                 }
             }
             .navigationTitle("\(journalEntryCount) Journal Entries")
+            .toolbar {
+                Button {
+                    showCreateView = true
+                    // modelContext.insert(newJournalEntry)
+                } label: {
+                    Label("Add Item", systemImage: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $showCreateView) {
+            CreateJournalEntryView()
         }
     }
     
