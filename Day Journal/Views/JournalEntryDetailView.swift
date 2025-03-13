@@ -28,6 +28,7 @@ struct JournalEntryDetailView: View {
                         .padding(.vertical, 8)
                     RatingView(rating: entry.rating)
                         .padding(.bottom, 8)
+                    Spacer()
                 }
                 Text(entry.text)
             }
