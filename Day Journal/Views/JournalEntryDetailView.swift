@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+struct RatingView: View {
+    let rating: Double
+    
+    var body: some View {
+        Text(String(repeating: "⭐️", count: Int(rating)))
+    }
+}
+
 struct JournalEntryDetailView: View {
     let entry: JournalEntry
     
@@ -18,8 +26,9 @@ struct JournalEntryDetailView: View {
                         .font(.subheadline)
                         .bold()
                         .padding(.vertical, 8)
-                    Text(String(repeating: "⭐️", count: entry.rating))
+                    RatingView(rating: entry.rating)
                         .padding(.bottom, 8)
+                    Spacer()
                 }
                 Text(entry.text)
             }

@@ -9,16 +9,28 @@ import SwiftUI
 import SwiftData
 
 struct JournalEntriesListView: View {
-    @Query private var journalEntries: [JournalEntry]
+    @Query(sort: \JournalEntry.date) private var journalEntries: [JournalEntry]
+    @Environment(\.modelContext) private var modelContext
+    @State private var showCreateView: Bool = false
 
     var body: some View {
         NavigationStack {
             List(journalEntries) { entry in
-                NavigationLink(destination: JournalEntryDetailView(entry: entry)) {
+                NavigationLink(destination: EditJournalEntryView(entry: entry)) {
                     JournalEntryRowView(entry: entry)
                 }
             }
             .navigationTitle("\(journalEntryCount) Journal Entries")
+            .toolbar {
+                Button {
+                    showCreateView = true
+                } label: {
+                    Label("Add Item", systemImage: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $showCreateView) {
+            CreateJournalEntryView()
         }
     }
     

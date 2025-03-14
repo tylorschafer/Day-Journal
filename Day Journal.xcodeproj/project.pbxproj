@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8E7FA8062CAEF76900B00DDF /* Day Journal */ = {
+		8E570EBC2D837A44002EF3D4 /* Day Journal */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Day Journal";
 			sourceTree = "<group>";
@@ -75,7 +75,7 @@
 		8E7FA7FB2CAEF76900B00DDF = {
 			isa = PBXGroup;
 			children = (
-				8E7FA8062CAEF76900B00DDF /* Day Journal */,
+				8E570EBC2D837A44002EF3D4 /* Day Journal */,
 				8E7FA8172CAEF76A00B00DDF /* Day JournalTests */,
 				8E7FA8212CAEF76A00B00DDF /* Day JournalUITests */,
 				8E7FA8052CAEF76900B00DDF /* Products */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				8E7FA8062CAEF76900B00DDF /* Day Journal */,
+				8E570EBC2D837A44002EF3D4 /* Day Journal */,
 			);
 			name = "Day Journal";
 			packageProductDependencies = (
