@@ -1,6 +1,6 @@
 # Day Journal
 
-A simple and elegant journaling app built with SwiftUI and SwiftData for iOS.
+A simple practice journaling app built with SwiftUI and SwiftData for iOS.
 
 ## Features
 
